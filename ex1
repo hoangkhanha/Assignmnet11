@@ -1,0 +1,54 @@
+package OOPExercise;
+
+import java.util.Scanner;
+public class Student {
+    private String studentId;
+    private String fullName;
+    private String dateOfBirth;
+    private String major;
+    private float gpa;
+    public Student(){}
+    public Student(String studentId, String fullName, String dateOfBirth, String major, float gpa){
+        this.studentId = studentId;
+        this.fullName = fullName;
+        this.dateOfBirth = dateOfBirth ;
+        this.major = major;
+        this.gpa = gpa;
+        
+    }
+    public void enterStudentInfo(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhap ID sinh vien: ");
+        this.studentId = scanner.nextLine();
+        
+        System.out.print("Nhap ho va ten: ");
+        this.fullName = scanner.nextLine();
+        System.out.print("Nhap ngay thang nam sinh: ");
+        this.dateOfBirth = scanner.nextLine();
+        System.out.print("Nhap chuyen nganh: ");
+        this.major = scanner.nextLine();
+        System.out.print("Nhap gpa: ");
+        this.gpa = scanner.nextFloat();
+    }
+    public void displayStudentInfo(){
+        System.out.println("ID: "+ studentId);
+        System.out.println("Ho va ten: "+ fullName);
+        System.out.println("Ngay sinh: "+ dateOfBirth);
+        System.out.println("Chuyen nghanh: "+ major);
+        System.out.println("GPA: "+ gpa);
+    }
+    public String getStudentId(){
+        return studentId;
+    }
+    public void setStudentId(String studentId){
+        this.studentId = studentId;
+    }
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.enterStudentInfo();
+        System.out.println("\nThong tin sinh vien vua nhap: ");
+        student.displayStudentInfo();
+    }
+}
+
+
